@@ -328,7 +328,7 @@ class Loader
                 ]
             ]);
 
-            echo json_encode([
+            echo wp_json_encode([
                 'status'  => 'success',
                 'type'    => 'redirect',
                 'message' => '<script data-cfasync="false" type="text/javascript" language="javascript">window.location.href="' . $paymentUrl . '"</script>', // @phpcs:ignore

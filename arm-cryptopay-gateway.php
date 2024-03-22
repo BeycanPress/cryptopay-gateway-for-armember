@@ -54,22 +54,10 @@ add_action('plugins_loaded', function (): void {
     armCryptoPayRegisterModels();
 
     if (!defined('MEMBERSHIPLITE_DIR_NAME')) {
-        add_action('admin_notices', function (): void {
-            ?>
-                <div class="notice notice-error">
-                    <p><?php echo sprintf(esc_html__('ARMember - CryptoPay Gateway: This plugin requires ARMember to work. You can download ARMember by %s.', 'arm-cryptopay'), '<a href="https://wordpress.org/plugins/armember-membership/" target="_blank">' . esc_html__('clicking here', 'arm-cryptopay') . '</a>'); ?></p>
-                </div>
-            <?php
-        });
+        Helpers::requirePluginMessage('ARMember', 'https://wordpress.org/plugins/armember-membership/');
     } elseif (Helpers::bothExists()) {
         new BeycanPress\CryptoPay\ARM\Loader();
     } else {
-        add_action('admin_notices', function (): void {
-            ?>
-                <div class="notice notice-error">
-                    <p><?php echo sprintf(esc_html__('ARMember - CryptoPay Gateway: This plugin is an extra feature plugin so it cannot do anything on its own. It needs CryptoPay to work. You can buy CryptoPay by %s.', 'arm-cryptopay'), '<a href="https://beycanpress.com/product/cryptopay-all-in-one-cryptocurrency-payments-for-wordpress/?utm_source=wp_org_addons&utm_medium=arm" target="_blank">' . esc_html__('clicking here', 'arm-cryptopay') . '</a>'); ?></p>
-                </div>
-            <?php
-        });
+        Helpers::requireCryptoPayMessage('ARMember');
     }
 });
