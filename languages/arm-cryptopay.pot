@@ -24,7 +24,7 @@ msgstr ""
 msgid "CryptoPay Gateway for ARMember"
 msgstr ""
 
-#: arm-cryptopay-gateway.php:70
+#: cryptopay-gateway-for-armember.php:70
 #, php-format
 msgid ""
 "CryptoPay Gateway for ARMember: This plugin is an extra feature plugin so it "
@@ -32,7 +32,7 @@ msgid ""
 "CryptoPay by %s."
 msgstr ""
 
-#: arm-cryptopay-gateway.php:60
+#: cryptopay-gateway-for-armember.php:60
 #, php-format
 msgid ""
 "CryptoPay Gateway for ARMember: This plugin requires ARMember to work. You can "
@@ -43,7 +43,7 @@ msgstr ""
 msgid "BeycanPress LLC"
 msgstr ""
 
-#: arm-cryptopay-gateway.php:60 arm-cryptopay-gateway.php:70
+#: cryptopay-gateway-for-armember.php:60 cryptopay-gateway-for-armember.php:70
 msgid "clicking here"
 msgstr ""
 
