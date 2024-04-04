@@ -1,7 +1,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ARMember - CryptoPay Gateway\n"
+"Project-Id-Version: CryptoPay Gateway for ARMember\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2024-03-16 12:24+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -21,13 +21,13 @@ msgid "Adds Cryptocurrency payment gateway (CryptoPay) for ARMember."
 msgstr ""
 
 #. Name of the plugin
-msgid "ARMember - CryptoPay Gateway"
+msgid "CryptoPay Gateway for ARMember"
 msgstr ""
 
 #: arm-cryptopay-gateway.php:70
 #, php-format
 msgid ""
-"ARMember - CryptoPay Gateway: This plugin is an extra feature plugin so it "
+"CryptoPay Gateway for ARMember: This plugin is an extra feature plugin so it "
 "cannot do anything on its own. It needs CryptoPay to work. You can buy "
 "CryptoPay by %s."
 msgstr ""
@@ -35,7 +35,7 @@ msgstr ""
 #: arm-cryptopay-gateway.php:60
 #, php-format
 msgid ""
-"ARMember - CryptoPay Gateway: This plugin requires ARMember to work. You can "
+"CryptoPay Gateway for ARMember: This plugin requires ARMember to work. You can "
 "download ARMember by %s."
 msgstr ""
 

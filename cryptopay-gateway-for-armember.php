@@ -10,7 +10,7 @@ defined('ABSPATH') || exit;
 // @phpcs:disable Generic.Files.LineLength
 
 /**
- * Plugin Name: ARMember - CryptoPay Gateway
+ * Plugin Name: CryptoPay Gateway for ARMember
  * Version:     1.0.0
  * Plugin URI:  https://beycanpress.com/cryptopay/
  * Description: Adds Cryptocurrency payment gateway (CryptoPay) for ARMember.
