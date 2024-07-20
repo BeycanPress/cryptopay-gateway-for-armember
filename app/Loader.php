@@ -27,6 +27,7 @@ class Loader
         Hook::addFilter('before_payment_finished_arm', [$this, 'paymentFinished']);
         Hook::addFilter('payment_redirect_urls_arm', [$this, 'paymentRedirectUrls']);
 
+        add_action('init', [Helpers::class, 'listenSPP']);
         add_filter('arm_get_payment_gateways', [$this, 'addGateway']);
         add_filter('arm_filter_gateway_names', [$this, 'addGatewayNames']);
         add_filter('arm_get_payment_gateways_in_filters', [$this, 'addGateway']);
