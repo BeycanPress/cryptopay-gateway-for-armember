@@ -11,7 +11,7 @@ defined('ABSPATH') || exit;
 
 /**
  * Plugin Name: CryptoPay Gateway for ARMember
- * Version:     1.0.0
+ * Version:     1.0.1
  * Plugin URI:  https://beycanpress.com/cryptopay/
  * Description: Adds Cryptocurrency payment gateway (CryptoPay) for ARMember.
  * Author:      BeycanPress LLC
@@ -21,7 +21,7 @@ defined('ABSPATH') || exit;
  * Text Domain: arm-cryptopay
  * Tags: Bitcoin, Ethereum, Crypto, Payment, ARMember
  * Requires at least: 5.0
- * Tested up to: 6.6
+ * Tested up to: 6.7.1
  * Requires PHP: 8.1
 */
 
@@ -29,7 +29,7 @@ defined('ABSPATH') || exit;
 require_once __DIR__ . '/vendor/autoload.php';
 
 define('ARM_CRYPTOPAY_FILE', __FILE__);
-define('ARM_CRYPTOPAY_VERSION', '1.0.0');
+define('ARM_CRYPTOPAY_VERSION', '1.0.1');
 define('ARM_CRYPTOPAY_KEY', basename(__DIR__));
 define('ARM_CRYPTOPAY_URL', plugin_dir_url(__FILE__));
 define('ARM_CRYPTOPAY_DIR', plugin_dir_path(__FILE__));
@@ -48,13 +48,15 @@ function armCryptoPayRegisterModels(): void
 
 armCryptoPayRegisterModels();
 
-load_plugin_textdomain('arm-cryptopay', false, basename(__DIR__) . '/languages');
+add_action('init', function (): void {
+    load_plugin_textdomain('arm-cryptopay', false, basename(__DIR__) . '/languages');
+});
 
 add_action('plugins_loaded', function (): void {
     armCryptoPayRegisterModels();
 
     if (!defined('MEMBERSHIPLITE_DIR_NAME')) {
-        Helpers::requirePluginMessage('ARMember', 'https://wordpress.org/plugins/armember-membership/');
+        Helpers::requirePluginMessage('ARMember', admin_url('plugin-install.php?s=armember&tab=search&type=term'));
     } elseif (Helpers::bothExists()) {
         new BeycanPress\CryptoPay\ARM\Loader();
     } else {
