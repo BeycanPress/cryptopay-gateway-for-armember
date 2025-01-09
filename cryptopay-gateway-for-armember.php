@@ -18,7 +18,7 @@ defined('ABSPATH') || exit;
  * Author URI:  https://beycanpress.com
  * License:     GPLv3
  * License URI: https://www.gnu.org/licenses/gpl-3.0.html
- * Text Domain: arm-cryptopay
+ * Text Domain: cryptopay-gateway-for-armember
  * Tags: Bitcoin, Ethereum, Crypto, Payment, ARMember
  * Requires at least: 5.0
  * Tested up to: 6.7.1
@@ -47,10 +47,6 @@ function armCryptoPayRegisterModels(): void
 }
 
 armCryptoPayRegisterModels();
-
-add_action('init', function (): void {
-    load_plugin_textdomain('arm-cryptopay', false, basename(__DIR__) . '/languages');
-});
 
 add_action('plugins_loaded', function (): void {
     armCryptoPayRegisterModels();

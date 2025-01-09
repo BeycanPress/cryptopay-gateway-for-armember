@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: CryptoPay Gateway for ARMember\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-03-16 12:24+0000\n"
+"POT-Creation-Date: 2025-01-09 06:41+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,45 +13,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.6.6; wp-6.4.3\n"
-"X-Domain: arm-cryptopay"
+"X-Loco-Version: 2.6.14; wp-6.7.1\n"
+"X-Domain: cryptopay-gateway-for-armember"
 
 #. Description of the plugin
 msgid "Adds Cryptocurrency payment gateway (CryptoPay) for ARMember."
-msgstr ""
-
-#. Name of the plugin
-msgid "CryptoPay Gateway for ARMember"
-msgstr ""
-
-#: cryptopay-gateway-for-armember.php:70
-#, php-format
-msgid ""
-"CryptoPay Gateway for ARMember: This plugin is an extra feature plugin so it "
-"cannot do anything on its own. It needs CryptoPay to work. You can buy "
-"CryptoPay by %s."
-msgstr ""
-
-#: cryptopay-gateway-for-armember.php:60
-#, php-format
-msgid ""
-"CryptoPay Gateway for ARMember: This plugin requires ARMember to work. You can "
-"download ARMember by %s."
 msgstr ""
 
 #. Author of the plugin
 msgid "BeycanPress LLC"
 msgstr ""
 
-#: cryptopay-gateway-for-armember.php:60 cryptopay-gateway-for-armember.php:70
-msgid "clicking here"
-msgstr ""
-
-#: app/Loader.php:249
+#: app/Loader.php:250
 msgid "CryptoPay"
 msgstr ""
 
-#: app/Loader.php:253
+#. Name of the plugin
+msgid "CryptoPay Gateway for ARMember"
+msgstr ""
+
+#: app/Loader.php:254
 msgid "CryptoPay Lite"
 msgstr ""
 
@@ -63,7 +44,7 @@ msgstr ""
 msgid "https://beycanpress.com/cryptopay/"
 msgstr ""
 
-#: app/Loader.php:226 app/Loader.php:234
+#: app/Loader.php:227 app/Loader.php:235
 msgid ""
 "You can pay with supported blockchain networks and currencies under these "
 "networks."

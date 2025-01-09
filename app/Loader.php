@@ -2,6 +2,8 @@
 
 declare(strict_types=1);
 
+// phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
+
 namespace BeycanPress\CryptoPay\ARM;
 
 use BeycanPress\CryptoPay\Integrator\Type;
@@ -19,7 +21,7 @@ class Loader
 
         // add transaction page
         Helpers::createTransactionPage(
-            esc_html__('ARMember Transactions', 'pp-cryptopay'),
+            esc_html__('ARMember Transactions', 'cryptopay-gateway-for-armember'),
             'arm',
             10
         );
@@ -126,7 +128,7 @@ class Loader
         $plan = new \ARM_Plan_Lite($planId);
         $oldPlan = new \ARM_Plan_Lite($oldPlanId);
 
-        $payment = $wpdb->get_row(sprintf("SELECT arm_log_id FROM {$ARMemberLite->tbl_arm_payment_log} WHERE arm_plan_id = %d AND arm_user_id = %d AND arm_old_plan_id = %d ORDER BY arm_log_id DESC", $paymentData['arm_plan_id'], $paymentData['arm_user_id'], $paymentData['arm_old_plan_id'])); // phpcs:ignore
+        $payment = $wpdb->get_row($wpdb->prepare("SELECT arm_log_id FROM {$ARMemberLite->tbl_arm_payment_log} WHERE arm_plan_id = %d AND arm_user_id = %d AND arm_old_plan_id = %d ORDER BY arm_log_id DESC", $paymentData['arm_plan_id'], $paymentData['arm_user_id'], $paymentData['arm_old_plan_id'])); // phpcs:ignore
 
         if (!$payment) {
             $wpdb->insert($ARMemberLite->tbl_arm_payment_log, $paymentData);
@@ -224,7 +226,7 @@ class Loader
         if (Helpers::exists()) {
             $gateways['cryptopay'] = [
                 'gateway_name' => 'CryptoPay',
-                'note' => esc_html__('You can pay with supported blockchain networks and currencies under these networks.', 'arm-cryptopay'), // phpcs:ignore
+                'note' => esc_html__('You can pay with supported blockchain networks and currencies under these networks.', 'cryptopay-gateway-for-armember'), // phpcs:ignore
                 'fields' => []
             ];
         }
@@ -232,7 +234,7 @@ class Loader
         if (Helpers::liteExists()) {
             $gateways['cryptopay_lite'] = [
                 'gateway_name' => 'CryptoPay Lite',
-                'note' => esc_html__('You can pay with supported blockchain networks and currencies under these networks.', 'arm-cryptopay'), // phpcs:ignore
+                'note' => esc_html__('You can pay with supported blockchain networks and currencies under these networks.', 'cryptopay-gateway-for-armember'), // phpcs:ignore
                 'fields' => []
             ];
         }
@@ -247,11 +249,11 @@ class Loader
     public function addGatewayNames(array $gatewayNames): array
     {
         if (Helpers::exists()) {
-            $gatewayNames['cryptopay'] = esc_html__('CryptoPay', 'arm-cryptopay');
+            $gatewayNames['cryptopay'] = esc_html__('CryptoPay', 'cryptopay-gateway-for-armember');
         }
 
         if (Helpers::liteExists()) {
-            $gatewayNames['cryptopay_lite'] = esc_html__('CryptoPay Lite', 'arm-cryptopay');
+            $gatewayNames['cryptopay_lite'] = esc_html__('CryptoPay Lite', 'cryptopay-gateway-for-armember');
         }
 
         return $gatewayNames;
