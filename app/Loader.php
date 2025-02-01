@@ -48,7 +48,7 @@ class Loader
             return $data;
         }
 
-        global $arm_payment_gateways, $arm_subscription_plans, $wpdb, $ARMemberLite;
+        global $arm_payment_gateways, $arm_subscription_plans, $wpdb, $ARMemberLite, $arm_member_forms;
 
         $userId = $data->getUserId();
         $amount = $data->getOrder()->getAmount();
@@ -58,7 +58,15 @@ class Loader
 
         $currency  = $arm_payment_gateways->arm_get_global_currency();
         $entryData = $arm_payment_gateways->arm_get_entry_data_by_id($entryId);
-        $userId    = $entryData['arm_user_id'];
+        $userId  = $entryData['arm_user_id'];
+
+        if (isset($postedData['arm_action']) && 'please-signup' === $postedData['arm_action']) {
+            $form = new \ARM_Form_Lite( 'id', absint($postedData['arm_form_id'])); // phpcs:ignore
+            if (in_array($form->type, ['registration'])) {
+                $postedData['arm_update_user_from_profile'] = 0;
+                $userId = $arm_member_forms->arm_register_new_member($postedData, $form);
+            }
+        }
 
         if (isset($postedData['first_name']) && isset($postedData['last_name'])) {
             $firstName = $postedData['first_name'];
@@ -128,7 +136,7 @@ class Loader
         $plan = new \ARM_Plan_Lite($planId);
         $oldPlan = new \ARM_Plan_Lite($oldPlanId);
 
-        $payment = $wpdb->get_row($wpdb->prepare("SELECT arm_log_id FROM {$ARMemberLite->tbl_arm_payment_log} WHERE arm_plan_id = %d AND arm_user_id = %d AND arm_old_plan_id = %d ORDER BY arm_log_id DESC", $paymentData['arm_plan_id'], $paymentData['arm_user_id'], $paymentData['arm_old_plan_id'])); // phpcs:ignore
+        $payment = $wpdb->get_row($wpdb->prepare("SELECT arm_log_id FROM %s WHERE arm_plan_id = %d AND arm_user_id = %d AND arm_old_plan_id = %d ORDER BY arm_log_id DESC", $ARMemberLite->tbl_arm_payment_log, $paymentData['arm_plan_id'], $paymentData['arm_user_id'], $paymentData['arm_old_plan_id'])); // phpcs:ignore
 
         if (!$payment) {
             $wpdb->insert($ARMemberLite->tbl_arm_payment_log, $paymentData);
@@ -189,7 +197,7 @@ class Loader
             }
         }
 
-        $lastPaymentStatus = $wpdb->get_var($wpdb->prepare('SELECT `arm_transaction_status` FROM `' . $ARMemberLite->tbl_arm_payment_log . '` WHERE `arm_user_id`=%d AND `arm_plan_id`=%d AND `arm_created_date`<=%s ORDER BY `arm_log_id` DESC LIMIT 0,1', $userId, $planId, current_time('mysql'))); // phpcs:ignore
+        $lastPaymentStatus = $wpdb->get_var($wpdb->prepare('SELECT `arm_transaction_status` FROM %s WHERE `arm_user_id`=%d AND `arm_plan_id`=%d AND `arm_created_date`<=%s ORDER BY `arm_log_id` DESC LIMIT 0,1', $ARMemberLite->tbl_arm_payment_log, $userId, $planId, current_time('mysql'))); // phpcs:ignore
 
         if ($isUpdatePlan) {
             $arm_subscription_plans->arm_update_user_subscription($userId, $planId, '', true, $lastPaymentStatus);

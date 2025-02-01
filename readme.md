@@ -1,20 +1,17 @@
-## Cryptocurrency Payment Gateway for ARMember by CryptoPay
+## Cryptocurrency Payment Gateway Plugin for ARMember by CryptoPay
 
-First of all, we would like to point out that this plugin is not a standalone plugin. This plugin is a **<a href="https://beycanpress.com/cryptopay/?utm_source=github&utm_medium=cryptopay_arm">cryptocurrency payment gateway for ARMember</a>**. In other words, users who want to sell courses with cryptocurrency payments can use WordPress and ARMember. However, this plugin is a plugin for CryptoPay and a cryptocurrency payment gateway for ARMember. So it's actually CryptoPay, which is the main plugin that handles cryptocurrency payments for WordPress. Therefore, users must have both plugins.
+### What does this plugin do?
 
-Thanks to this plugin, you can receive **<a href="https://beycanpress.com/cryptopay/?utm_source=github&utm_medium=cryptopay_arm">cryptocurrency payments</a>** from many Blockchain networks, especially Bitcoin, Ethereum, Solana, and sell paid courses with cryptocurrencies on your WordPress site with the ARMember plugin.
+The blockchain and cryptocurrency ecosystem is expanding rapidly. Many entrepreneurs in this field build communities, offer educational content, and create platforms. If you've set up a membership platform using ARMember on WordPress and need a seamless way to accept crypto payments, you're in the right place.
 
-What is CryptoPay? (Click and watch video)
+With CryptoPay, you can integrate a commission-free, peer-to-peer cryptocurrency payment gateway into ARMember effortlessly.
 
-[![Cryptocurrency payment gateway for WordPress](https://img.youtube.com/vi/3vaoFL4XG10/0.jpg)](https://www.youtube.com/watch?v=3vaoFL4XG10)
-<br>
+### How does it work?
 
-Review CryptoPay Lite: **<a href="https://wordpress.org/plugins/cryptopay-wc-lite/">Cryptocurrency payment gateway for ARMember</a>**
+To use this plugin, you need to have either the Lite or Premium version of CryptoPay, as it functions as an integration module. Additionally, ARMember must be installed on your WordPress site. Once CryptoPay is activated, navigate to the payment settings in ARMember and add CryptoPay as a payment method.
 
-Review CryptoPay Premium: **<a href="https://beycanpress.com/cryptopay/?utm_source=github&utm_medium=cryptopay_arm">Cryptocurrency payments for WooCommerce</a>**
+As shown in the images below, you can start accepting cryptocurrency payments directly through ARMember with ease.
 
-Review ARMember: **<a href="https://wordpress.org/plugins/armember-membership/">ARMember</a>**
-
-See **<a href="https://cryptopay.beycanpress.net/" target="_blank">Demo</a>**
-
-Bitcoin, Ethereum, Binance, Solana, Tron, Avalanche, Polygon, MetaMask, TrustWallet, WalletConnect, Phantom Cryptocurrency payments gateway plugin for WordPress & WooCommerce, cryptocurrency wordpress, cryptocurrency woocommerce, cryptocurrency payments, cryptocurrency payments gateway, cryptocurrency payments for woocommerce, cryptocurrency payments for wordpress, bitcoin payment for wordpress, woocommerce crypto payments, wordpress crypto payments, wordPress cryptocurrency payment plugin, woocommerce cryptocurrency payment gateway, cryptocurrency payment gateway for woocommerce, crypto payments woocommerce, accept cryptocurrency payments
+![Screenshot 1](https://i.hizliresim.com/q0kv8h7.png)
+![Screenshot 2](https://i.hizliresim.com/fwj3k0t.png)
+![Screenshot 3](https://i.hizliresim.com/cnqo3hn.png)
