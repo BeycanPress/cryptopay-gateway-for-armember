@@ -25,8 +25,6 @@ This integration add-on allows you to use CryptoPay with ARMember and sell your 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/3vaoFL4XG10" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-See **<a href="https://cryptopay.beycanpress.net/" target="_blank">Demo</a>**
-
 #### This plugin is an integration plugin. So basically you need to have the following two plugins.
 
 **<a href="https://wordpress.org/plugins/cryptopay-wc-lite/">Review CryptoPay Lite</a>**
@@ -35,7 +33,7 @@ See **<a href="https://cryptopay.beycanpress.net/" target="_blank">Demo</a>**
 
 **<a href="https://wordpress.org/plugins/armember-membership">Review ARMember</a>**
 
-See CryptoPay Demo **<a href="https://cryptopay.beycanpress.net/register/test-membership/" target="_blank">Demo</a>**
+**<a href="https://cryptopay.beycanpress.net/" target="_blank">See CryptoPay Demo</a>**
 
 = Privacy notices =
 
