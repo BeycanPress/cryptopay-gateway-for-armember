@@ -275,15 +275,17 @@ class Loader
     {
         $data = [];
 
+        $total = count($setupData['setup_modules']['modules']['gateways']);
+
         if (Helpers::exists()) {
             $data['modules']['gateways'][] = 'cryptopay';
-            $data['modules']['gateways_order']['cryptopay'] = 1;
+            $data['modules']['gateways_order']['cryptopay'] = $total;
             $data['modules']['payment_mode']['cryptopay'] = 'manual_subscription';
         }
 
         if (Helpers::liteExists()) {
             $data['modules']['gateways'][] = 'cryptopay_lite';
-            $data['modules']['gateways_order']['cryptopay_lite'] = 2;
+            $data['modules']['gateways_order']['cryptopay_lite'] = $total;
             $data['modules']['payment_mode']['cryptopay_lite'] = 'manual_subscription';
         }
 

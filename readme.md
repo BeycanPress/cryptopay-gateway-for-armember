@@ -12,6 +12,6 @@ To use this plugin, you need to have either the Lite or Premium version of Crypt
 
 As shown in the images below, you can start accepting cryptocurrency payments directly through ARMember with ease.
 
-![Screenshot 1](https://i.hizliresim.com/q0kv8h7.png)
-![Screenshot 2](https://i.hizliresim.com/fwj3k0t.png)
-![Screenshot 3](https://i.hizliresim.com/cnqo3hn.png)
+![Screenshot 1](https://i.imgur.com/lLOseGT.png)
+![Screenshot 2](https://i.imgur.com/W0PrMpT.png)
+![Screenshot 3](https://i.imgur.com/3ZTIJP4.png)
