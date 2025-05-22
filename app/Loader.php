@@ -19,12 +19,14 @@ class Loader
     {
         Helpers::registerIntegration('arm');
 
-        // add transaction page
-        Helpers::createTransactionPage(
-            esc_html__('ARMember Transactions', 'cryptopay-gateway-for-armember'),
-            'arm',
-            10
-        );
+        add_action('init', function (): void {
+            // add transaction page
+            Helpers::createTransactionPage(
+                esc_html__('ARMember Transactions', 'cryptopay-gateway-for-armember'),
+                'arm',
+                9
+            );
+        });
 
         Hook::addFilter('before_payment_finished_arm', [$this, 'paymentFinished']);
         Hook::addFilter('payment_redirect_urls_arm', [$this, 'paymentRedirectUrls']);
@@ -38,7 +40,7 @@ class Loader
         add_action('arm_payment_gateway_validation_from_setup', [$this, 'validatePaymentGateway'], 10, 4);
     }
 
-        /**
+    /**
      * @param object $data
      * @return object
      */
@@ -61,7 +63,7 @@ class Loader
         $userId  = $entryData['arm_user_id'];
 
         if (isset($postedData['arm_action']) && 'please-signup' === $postedData['arm_action']) {
-            $form = new \ARM_Form_Lite( 'id', absint($postedData['arm_form_id'])); // phpcs:ignore
+            $form = new \ARM_Form_Lite('id', absint($postedData['arm_form_id'])); // phpcs:ignore
             if (in_array($form->type, ['registration'])) {
                 $postedData['arm_update_user_from_profile'] = 0;
                 $userId = $arm_member_forms->arm_register_new_member($postedData, $form);
